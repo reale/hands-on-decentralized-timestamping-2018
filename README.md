@@ -1,4 +1,4 @@
-# Hands-on decentralized timestamping.
+# Hands-on decentralized timestamping
 
 My talk at the [Linux Day 2018](http://lug.uniroma2.it/ld18/), Università di Tor Vergata, Rome.
 
