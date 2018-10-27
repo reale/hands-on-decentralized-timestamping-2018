@@ -47,19 +47,123 @@
 					</p>
 				</section>
 
+                                <section>
+                                        <figure>
+                                                <img src="images/dilbert-blockchain.jpg">
+                                        </figure>
+                                </section>
+
 				<section>
 					<h3>Our Agenda</h3>
 					<ol>
-						<li>first
-						<li>second
-						<li>third
+						<li>Going Trustless
+						<li>From postmarks to blockchain
+						<li>Enter the Linux kernel: inotify
 						<li>TimestamPy
 						<li>Who's Who
 					</ol>
 				</section>
 
+                                <section>
+                                        <h2>Going Trustless</h2>
+                                </section>
+
+                                <section>
+                                        <figure>
+                                                <img src="images/blockchain-infographics.png">
+                                        </figure>
+                                </section>
+
+                                <section>
+                                        <h3>Blockchain</h3>
+                                        <ul>
+                                                <li>No central authority in control
+                                                <li>No need to trust your counterpart to perform their obligations or properly record transactional data
+                                                <li>Game Theory is used to model incentives
+                                                <li>Secure by design (cryptography)
+                                        </ul>
+                                </section>
+
+                                <section>
+                                        <h3>A taxonomy</h3>
+                                        <ul>
+                                                <li><strong>Public</strong>: Anybody can use it, send transactions, participate, explore (<em>Bitcoin, Ethereum</em>)
+                                                <li><strong>Consortium</strong>: Controlled by a pre-selected set of nodes (<em>R3</em>)
+                                                <li><strong>Private</strong>: Permission management is centralized (<em>MultiChain</em>)
+                                        </ul>
+                                </section>
+
+                                <section>
+                                        <h3>Consensus mechanisms</h3>
+                                        <ul>
+                                                <li><strong>Proof of Work (PoW)</strong>: Network participants have to solve <em>cryptographic puzzles</em> to be allowed to add new blocks to the blockchain (<em>mining</em>)
+                                                <li><strong>Proof of Stake (PoS)</strong>: Network participants must prove ownership of a certain asset in order to participate in the validation of transactions (<em>forging</em>)
+                                                <li><strong>Others mechanisms</strong>: proof of service, proof of elapsed time, proof of capacity, useful PoW
+                                        </ul>
+                                </section>
+
+                                <section>
+                                        <h2>From postmarks to blockchain</h2>
+                                </section>
+
+                                <section>
+                                        <figure>
+                                                <img src="images/opentimestamps.png">
+                                        </figure>
+                                </section>
+
+                                <section>
+                                        <h2>Enter the Linux kernel: inotify</h2>
+                                </section>
+
+                                <section>
+                                        <figure>
+                                                <img src="images/inotify.jpg">
+                                        </figure>
+                                </section>
+
+                                <section>
+                                        <h3>System calls</h3>
+                                        <ul>
+                                                <li>Fundamental source of truth (<em>DevSecCon Singapore 2018</em>)
+                                                <li>Transit points between user land and the kernel
+                                                <li>Processes make them all the time, disclosing information about their activities
+                                                <li>Provide theep insight when aggregated
+                                        </ul>
+                                </section>
+
+                                <section>
+                                        <h3>inotify</h3>
+                                        <ul>
+						<li>Linux kernel subsystem
+						<li>Used via a system API call
+						<li>include &lt;sys/inotify.h&gt; or &lt;linux/inotify.h&gt;
+						<li>init(), add_watch(), read(), rm_watch
+						<li>Python adapter
+                                        </ul>
+                                </section>
+
 				<section>
-					<h2>First</h2>
+					<pre><code data-trim>
+						import inotify.adapters
+
+						def _main():
+						    i = inotify.adapters.Inotify()
+
+						    i.add_watch('/tmp')
+
+						    with open('/tmp/test_file', 'w'):
+							pass
+
+						    for event in i.event_gen(yield_nones=False):
+							(_, type_names, path, filename) = event
+
+							print("PATH=[{}] FILENAME=[{}] EVENT_TYPES={}".format(
+							      path, filename, type_names))
+
+						if __name__ == '__main__':
+						    _main()
+					</code></pre>
 				</section>
 
 				<section>
