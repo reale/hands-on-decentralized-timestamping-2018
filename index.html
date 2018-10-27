@@ -6,7 +6,7 @@
 
 		<title>Hands-on decentralized timestamping</title>
 
-		<meta name="description" content="TODO">
+		<meta name="description" content="My talk at the Linux Day 2018, Università di Tor Vergata, Rome.">
 		<meta name="author" content="Roberto Reale">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -56,7 +56,8 @@
 				<section>
 					<h3>Our Agenda</h3>
 					<ol>
-						<li>Going Trustless
+						<li>Going trustless
+						<li>Keeping time
 						<li>From postmarks to blockchain
 						<li>Enter the Linux kernel: inotify
 						<li>TimestamPy
@@ -65,7 +66,7 @@
 				</section>
 
                                 <section>
-                                        <h2>Going Trustless</h2>
+                                        <h2>Going trustless</h2>
                                 </section>
 
                                 <section>
@@ -103,12 +104,77 @@
                                 </section>
 
                                 <section>
+                                        <h2>Keeping time</h2>
+                                </section>
+
+                                <section>
+                                        <figure>
+                                                <img src="images/keeping-time.jpg">
+                                        </figure>
+                                </section>
+
+                                <section>
+                                        <h3>Trusted timestamping</h3>
+					<p>The process of securely keeping track of the creation and modification time of a document.</p>
+
+					<p>No one should be able to change it once it has been recorded provided that the timestamper's integrity is never compromised.</p>
+                                </section>
+
+                                <section>
+                                        <h3>The blockchain as a TSA</h3>
+					<ol>
+						<li>Data is hashed
+						<li>The hash is incorporated into a transaction stored in the blockchain
+					</ol>
+                                </section>
+
+                                <section>
+                                        <h3>Bitcoin network time, 1</h3>
+					<p>Each node internally maintains a counter that represents the network time, based on the median time of a node's peers which is sent in the version message when peers connect.</p>
+                                </section>
+
+                                <section>
+                                        <h3>Bitcoin network time, 2</h3>
+					<p>The network time counter reverts to the system time if the median time differs by more than 70 minutes from the system time.</p>
+                                </section>
+
+                                <section>
+                                        <h3>Bitcoin network time, 3</h3>
+					<p>Nodes reject any block timestamp that is greater than 2 hours from the current network time.</p>
+					<p>Block timestamps that are earlier than the median time of the past 11 blocks are also rejected.</p>
+                                </section>
+
+                                <section>
+                                        <h3>Scalability problems</h3>
+					<ol>
+						<li>Transaction rate
+						<li>Hash length
+					</ol>
+                                </section>
+
+                                <section>
                                         <h2>From postmarks to blockchain</h2>
                                 </section>
 
                                 <section>
                                         <figure>
                                                 <img src="images/opentimestamps.png">
+                                        </figure>
+                                </section>
+
+                                <section>
+                                        <h3>OpenTimestamps</h3>
+					<ol>
+						<li><strong>Trust</strong>: Removes the need for trusted authorities
+						<li><strong>Cost</strong>: Scales indefinitely, allowing timestamps to be created for free by combining an unlimited number of timestamps into one transaction
+						<li><strong>Convenience</strong>: Can create a third-party-verifiable timestamp in about a second
+					</ol>
+                                </section>
+
+                                <section>
+                                        <h3>Scalability through aggregation</h3>
+                                        <figure>
+                                                <img src="images/opentimestamps-merkle.png">
                                         </figure>
                                 </section>
 
