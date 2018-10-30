@@ -4,11 +4,11 @@ My talk at the [Linux Day 2018](http://lug.uniroma2.it/ld18/), Università di To
 
 ## English Abstract
 
-My talks deals, both from a theoretical and from a practical point of view, with the most recent approaches to the generation of timestamps through the blockchain, following an implementation-agnostic approach. A working example will also be presented, the [TimestamPy](https://reale.me/timestampy/) project, based on the [OpenTimestamps](https://opentimestamps.org/) API and on the `inotify` Linux system calls.
+My talk deals, both from a theoretical and from a practical point of view, with the most recent approaches to the generation of timestamps through the blockchain, following an implementation-agnostic approach. A working example will also be presented, the [TimestamPy](https://timestampy.reale.me/) project, based on the [OpenTimestamps](https://opentimestamps.org/) API and on the `inotify` Linux system calls.
 
 ## Abstract in italiano
 
-L'intervento affronta, dal punto di vista teorico e da quello pratico, gli approcci più recenti alla generazione di marche temporali tramite blockchain, ed in particolare i tentativi di astrarre da una implementazione specifica. Si presenterà anche un *working example*, il prototipo [TimestamPy](https://reale.me/timestampy/), basato sul progetto [OpenTimestamps](https://opentimestamps.org/) e sulle system call `inotify` del kernel Linux.
+L'intervento affronta, dal punto di vista teorico e da quello pratico, gli approcci più recenti alla generazione di marche temporali tramite blockchain, ed in particolare i tentativi di astrarre da una implementazione specifica. Si presenterà anche un *working example*, il prototipo [TimestamPy](https://timestampy.reale.me/), basato sul progetto [OpenTimestamps](https://opentimestamps.org/) e sulle system call `inotify` del kernel Linux.
 
 ## License Notice
 
